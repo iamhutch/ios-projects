@@ -14,11 +14,22 @@
 {
     IBOutlet UITextView *eventDisplay;
     int counter;
-    IBOutlet UILabel *swipeLabel;
+    
+    // Add a swipable label at the bottom of the view. Add the text, "Swipe Right to Add Event"
+    IBOutlet UILabel *swipeRightLabel;
+    
+    // Attach a UISwipeGestureRecognizer to the UILabel
     UISwipeGestureRecognizer *rightSwiper;
-
 }
 
+
+/*------------------------------------------------------------------------------------------ *
+ Add a save button to the header of the view. Attach an IBAction and click event.
+ *------------------------------------------------------------------------------------------ */
 -(IBAction)onSaveView:(id)sender;
+
+-(void)onSave:(NSString*)myEvent;
+
+- (void)onSwipe:(UISwipeGestureRecognizer*)recognizer;
 
 @end

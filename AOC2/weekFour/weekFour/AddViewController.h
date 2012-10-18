@@ -22,12 +22,19 @@
     IBOutlet UIDatePicker *eventDate;
     NSString *myEvent;
     NSString *eventDateFormatted;
+    
+    // Add a UILabel at the top with the text "Swipe Left to Close"
+    IBOutlet UILabel *swipeLeftLabel;
+    
+    // Add a UISwipeGestureRecognizer to the UILabel and attach an event handler.
+    UISwipeGestureRecognizer *leftSwiper;
 }
 
 @property (strong) id<AddViewDelegate> delegate;
 
--(IBAction)saveEvent:(id)sender;
 -(IBAction)closeKeyboard:(id)sender;
+- (BOOL)textFieldShouldReturn:(UITextField *)textField;
+- (void)onSwipe:(UISwipeGestureRecognizer*)recognizer;
 
 @end
 

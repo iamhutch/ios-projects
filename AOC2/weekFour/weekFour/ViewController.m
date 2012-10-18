@@ -17,12 +17,6 @@
 
 
 
-
-
-/*------------------------------------------------------------------------------------------ *
- When the Add Event view closes, the newly created event text will be added to the UITextView.
- *------------------------------------------------------------------------------------------ */
-
 -(void)onSave:(NSString*)myEvent
 {
     
@@ -40,15 +34,22 @@
     counter ++;
 }
 
+
+
 - (void)viewWillAppear:(BOOL)animated
-{
-    
+{   
     rightSwiper = [[UISwipeGestureRecognizer alloc] initWithTarget:self  action:@selector(onSwipe:)];
     rightSwiper.direction = UISwipeGestureRecognizerDirectionRight;
-    [swipeLabel addGestureRecognizer:rightSwiper];
+    [swipeRightLabel addGestureRecognizer:rightSwiper];
     
     [super viewWillAppear:animated];
 }
+
+
+
+/*------------------------------------------------------------------------------------------ *
+ When the swipe right gesture happens, pop up the add event view.
+ *------------------------------------------------------------------------------------------ */
 
 - (void)onSwipe:(UISwipeGestureRecognizer*)recognizer
 {
@@ -61,16 +62,20 @@
 }
 
 
+
+/*------------------------------------------------------------------------------------------ *
+    When the user clicks the save button, use NSUserDefaults to save the text in the textview.
+ *------------------------------------------------------------------------------------------ */
+
 -(IBAction)onSaveView:(id)sender
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (defaults != nil)
     {
         NSString *eventsText = eventDisplay.text;
-        
         [defaults setObject:eventsText forKey:@"events"];
-        
         [defaults synchronize];
+        NSLog(@"Saving text view.");
     }
 }
 
@@ -83,6 +88,12 @@
 }
 
 
+
+/*------------------------------------------------------------------------------------------ *
+    When the application loads, use NSUserDefaults to load in any previously saved text and 
+    drop it into the textview.
+ *------------------------------------------------------------------------------------------ */
+
 - (void)viewDidAppear:(BOOL)animated
 {
     
@@ -90,13 +101,14 @@
     if(defaults != nil)
     {
         NSString *eventsText = eventDisplay.text;
-        
         [defaults setObject:eventsText forKey:@"events"];
+        NSLog(@"Loading saved text.");
     }
     
     [super viewDidAppear:animated];
 	// Do any additional setup after loading the view, typically from a nib.
 }
+
 
 
 - (void)didReceiveMemoryWarning

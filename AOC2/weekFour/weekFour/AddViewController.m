@@ -31,25 +31,30 @@
 
 - (void)viewDidLoad
 {
-    /*------------------------------------------------------------------------------------------ *
-     A UIDatePicker control is displayed at the bottom of the view.
-     The date picker must always have a minimum date of the current date.
-     *------------------------------------------------------------------------------------------ */
     eventDate.minimumDate = [NSDate date];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
 
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    leftSwiper = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
+    leftSwiper.direction = UISwipeGestureRecognizerDirectionLeft;
+    [swipeLeftLabel addGestureRecognizer:leftSwiper];
+    
+    
+    [super viewWillAppear:animated];
+}
+
 
 
 /*------------------------------------------------------------------------------------------ *
- A Save button appears at the top. When clicking on Save, the event description text
- and date/time information is collected and sent back to the primary view as the view
- is dismissed.
+    When the user swipes left on the UILabel, collect the event title information as 
+    well as the date/time information from the picker and close the event view.
  *------------------------------------------------------------------------------------------ */
 
--(IBAction)saveEvent:(id)sender
+- (void)onSwipe:(UISwipeGestureRecognizer*)recognizer
 {
     // If the event name is empty, throw up an alert
     if ([eventName.text isEqualToString:@""])
@@ -87,15 +92,11 @@
 
 
 
-/*------------------------------------------------------------------------------------------ *
- A Close Keyboard button is also on the view. When clicking on this button,
- the keyboard that is opened will be dismissed.
- *------------------------------------------------------------------------------------------ */
+// Close keyboard 
 -(IBAction)closeKeyboard:(id)sender
 {
     [eventName resignFirstResponder];
 }
-
 
 // Added in the close keyboard when they hit enter after typing in event name
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
