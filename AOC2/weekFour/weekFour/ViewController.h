@@ -15,7 +15,6 @@
     IBOutlet UITextView *eventDisplay;
     int counter;
     IBOutlet UILabel *swipeLabel;
-    
     UISwipeGestureRecognizer *rightSwiper;
 
 }

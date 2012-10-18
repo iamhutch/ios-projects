@@ -17,11 +17,6 @@
 
 
 
--(IBAction)onSaveView:(id)sender
-{
-    
-}
-
 
 
 /*------------------------------------------------------------------------------------------ *
@@ -66,11 +61,43 @@
 }
 
 
+-(IBAction)onSaveView:(id)sender
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (defaults != nil)
+    {
+        NSString *eventsText = eventDisplay.text;
+        
+        [defaults setObject:eventsText forKey:@"events"];
+        
+        [defaults synchronize];
+    }
+}
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if(defaults != nil)
+    {
+        NSString *eventsText = eventDisplay.text;
+        
+        [defaults setObject:eventsText forKey:@"events"];
+    }
+    
+    [super viewDidAppear:animated];
+	// Do any additional setup after loading the view, typically from a nib.
+}
+
 
 - (void)didReceiveMemoryWarning
 {
