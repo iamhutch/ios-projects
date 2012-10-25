@@ -23,6 +23,7 @@
 		84B33A111638BFAD0008095F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B33A101638BFAD0008095F /* Icon.png */; };
 		84B33A181638C8FE0008095F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B33A171638C8FE0008095F /* DetailViewController.m */; };
 		84B33A1A1638C9120008095F /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B33A191638C9120008095F /* DetailView.xib */; };
+		84B33A431638E5440008095F /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B33A421638E5440008095F /* bg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		84B33A161638C8FE0008095F /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		84B33A171638C8FE0008095F /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		84B33A191638C9120008095F /* DetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
+		84B33A421638E5440008095F /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg.png; path = ../../../../../MDF1/Graphics/bg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		84B339D9163787720008095F /* testApp */ = {
 			isa = PBXGroup;
 			children = (
+				84B33A421638E5440008095F /* bg.png */,
 				84B33A101638BFAD0008095F /* Icon.png */,
 				84B339E2163787720008095F /* AppDelegate.h */,
 				84B339E3163787720008095F /* AppDelegate.m */,
@@ -185,6 +188,7 @@
 				84B33A0116378DA50008095F /* CustomCellView.xib in Resources */,
 				84B33A111638BFAD0008095F /* Icon.png in Resources */,
 				84B33A1A1638C9120008095F /* DetailView.xib in Resources */,
+				84B33A431638E5440008095F /* bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
