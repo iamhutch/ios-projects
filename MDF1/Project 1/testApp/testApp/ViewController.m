@@ -131,7 +131,6 @@
     CustomTableCell *newCell = [myTableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (newCell == nil)
     {
-        //newCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         
         NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"CustomCellView" owner:nil options:nil];
         
@@ -222,7 +221,6 @@
     // Pull up my detail view
     [self presentViewController:myDetailView animated:YES completion:nil];
     
-
 }
 
 

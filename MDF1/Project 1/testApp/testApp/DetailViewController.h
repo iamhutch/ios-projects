@@ -18,8 +18,8 @@
 @property (nonatomic, retain) IBOutlet UITextView *clientDisplay;
 @property (nonatomic, retain) NSString *clientSelected;
 
-
 -(IBAction)onBack:(id)sender;
 -(id)initWithTextSelected:(NSString*)text;
+
 
 @end
