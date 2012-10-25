@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DetailViewController.h"
 
 @interface ViewController : UIViewController <UITableViewDelegate>
 {
     IBOutlet UITableView *myTableView;
-    NSMutableArray *stringArray;
+    NSMutableArray *stringNames;
+    NSMutableArray *stringLocation;
+    NSMutableArray *stringWebsites;
+    DetailViewController *detailView;
 }
+@property (nonatomic, retain) DetailViewController *detailView;
 
 - (IBAction)onEdit:(id)sender;
 

@@ -10,8 +10,11 @@
 
 @interface CustomTableCell : UITableViewCell
 {
-    IBOutlet UILabel *titleLabel;
     IBOutlet UILabel *textLabel;
+    IBOutlet UILabel *locationLabel;
 }
+
+@property (strong, nonatomic)IBOutlet UILabel *textLabel;
+@property (strong, nonatomic)IBOutlet UILabel *locationLabel;
 
 @end
