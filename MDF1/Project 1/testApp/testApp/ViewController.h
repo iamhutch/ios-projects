@@ -12,6 +12,7 @@
 @interface ViewController : UIViewController <UITableViewDelegate>
 {
     IBOutlet UITableView *myTableView;
+    IBOutlet UIButton *editButton;
     NSMutableArray *stringNames;
     NSMutableArray *stringLocation;
     NSMutableArray *stringWebsites;

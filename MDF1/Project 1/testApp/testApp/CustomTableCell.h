@@ -10,6 +10,7 @@
 
 @interface CustomTableCell : UITableViewCell
 {
+    // setup labels
     IBOutlet UILabel *textLabel;
     IBOutlet UILabel *locationLabel;
 }

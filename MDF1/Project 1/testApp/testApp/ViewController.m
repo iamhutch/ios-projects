@@ -19,8 +19,15 @@
 
 - (void)viewDidLoad
 {
+    // set table view default to false
     [myTableView setEditing:false];
 
+    
+    
+/*------------------------------------------------------------------------------------------ *
+    At least twenty items must be in the list initially.
+ *------------------------------------------------------------------------------------------ */
+    
     stringNames = [[NSMutableArray alloc] initWithObjects:
                    @"Sleep School Hawaii",
                    @"Salon Elements",
@@ -101,23 +108,21 @@
 }
 
 
-- (IBAction)onEdit:(id)sender
-{
-    [myTableView setEditing:true];
-}
+
+/*------------------------------------------------------------------------------------------ *
+    A UITableView displaying a list of items. 
+ *------------------------------------------------------------------------------------------ */
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return stringNames.count;
 }
 
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return UITableViewCellEditingStyleDelete;
-    
-}
 
-// Create Table Cells ================================
+
+/*------------------------------------------------------------------------------------------ *
+    A custom UITableView Cell that contains at least one UIImageView and two strings.
+ *------------------------------------------------------------------------------------------ */
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -146,39 +151,66 @@
 
 
 
+/*------------------------------------------------------------------------------------------ *
+    The edit button changes the UITableView to edit mode and 
+    shows the minus button for deletion.
+ *------------------------------------------------------------------------------------------ */
+
+- (IBAction)onEdit:(id)sender
+{
+    if (myTableView.editing == false)
+    {
+        [myTableView setEditing: true];
+        
+        // Set button to done to indicate to user to press to get out of edit mode
+        [editButton setTitle:@"Done" forState:UIControlStateNormal];
+    }
+    else
+    {
+        [myTableView setEditing: false];
+        
+        // Set button back to edit for user to see 
+        [editButton setTitle:@"Edit" forState:UIControlStateNormal];
+    }
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // set up editing style to delete
+    return UITableViewCellEditingStyleDelete;
+}
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    if (editingStyle == UITableViewCellEditingStyleDelete)
-    {
-        NSLog(@"delete row %d", indexPath.row);
+    //NSLog(@"delete row %d", indexPath.row);
         
-        // removes object from our data array
-        [stringNames removeObjectAtIndex:indexPath.row];
-        
-        [myTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:true];
-    }
-    else if (editingStyle == UITableViewCellEditingStyleInsert)
-    {
-        NSLog(@"add");
-        
-        [stringNames insertObject:@"testing" atIndex:indexPath.row];
-        [myTableView insertRowsAtIndexPaths:[NSMutableArray arrayWithObject:indexPath] withRowAnimation:true];
-        
-    }
+    // remove All related objects from our data array so they don't show up in details
+    [stringNames removeObjectAtIndex:indexPath.row];
+    [stringLocation removeObjectAtIndex:indexPath.row];
+    [stringWebsites removeObjectAtIndex:indexPath.row];
+    
+    [myTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:true];
+
 }
 
 
 
+/*------------------------------------------------------------------------------------------ *
+    When clicking on an item in the list, move to a second view 
+    with more information about this item.
+ *------------------------------------------------------------------------------------------ */
 
 - (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    // Pull the related information for the selected client
     NSString *selectedClient = [stringNames objectAtIndex:[indexPath row]];
     NSString *selectedLocation = [stringLocation objectAtIndex:[indexPath row]];
     NSString *selectedWebsites = [stringWebsites objectAtIndex:[indexPath row]];
    
     //this is the output for the detail view
-    NSString *displayClient = [[NSString alloc] initWithFormat: @"%@ \n Location: %@ \n Website: %@", selectedClient, selectedLocation, selectedWebsites];
+    NSString *displayClient = [[NSString alloc] initWithFormat: @"%@ \nLocation: %@ \nWebsite: %@", selectedClient, selectedLocation, selectedWebsites];
     
     // Setup detail view
     DetailViewController *myDetailView = [[DetailViewController alloc] initWithNibName:@"DetailView" bundle:[NSBundle mainBundle]];

@@ -10,12 +10,14 @@
 
 @interface DetailViewController : UIViewController
 {
+    // setup
     IBOutlet UITextView *clientDisplay;
     NSString *clientSelected;
 }
 
 @property (nonatomic, retain) IBOutlet UITextView *clientDisplay;
 @property (nonatomic, retain) NSString *clientSelected;
+
 
 -(IBAction)onBack:(id)sender;
 -(id)initWithTextSelected:(NSString*)text;
