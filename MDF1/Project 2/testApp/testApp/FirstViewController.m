@@ -7,6 +7,7 @@
 //
 
 #import "FirstViewController.h"
+#import "MoreViewController.h"
 
 @interface FirstViewController ()
 
@@ -18,14 +19,26 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"First", @"First");
+        self.title = NSLocalizedString(@"Home", @"Home");
         self.tabBarItem.image = [UIImage imageNamed:@"first"];
     }
     return self;
 }
+
+-(IBAction)onMore:(id)sender
+{
+    MoreViewController *moreView = [[MoreViewController alloc] initWithNibName:@"MoreView" bundle:nil];
+    if (moreView != nil)
+    {
+        [self.navigationController pushViewController:moreView animated:true];
+    }
+}
 							
 - (void)viewDidLoad
 {
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]]];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }

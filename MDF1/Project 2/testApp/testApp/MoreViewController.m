@@ -1,32 +1,41 @@
 //
-//  ThirdViewController.m
+//  MoreViewController.m
 //  testApp
 //
 //  Created by Lucy Hutcheson on 10/28/12.
 //  Copyright (c) 2012 Lucy Hutcheson. All rights reserved.
 //
 
-#import "ThirdViewController.h"
+#import "MoreViewController.h"
+#import "ContactViewController.h"
 
-@interface ThirdViewController ()
+@interface MoreViewController ()
 
 @end
 
-@implementation ThirdViewController
+@implementation MoreViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title = NSLocalizedString(@"Services", @"Services");
-        self.tabBarItem.image = [UIImage imageNamed:@"second"];
     }
     return self;
 }
 
+- (IBAction)onClick:(id)sender
+{
+    ContactViewController *contactView = [[ContactViewController alloc] initWithNibName:@"ContactView" bundle:nil];
+    if (contactView != nil)
+    {
+        [self.navigationController pushViewController:contactView animated:true];
+    }
+}
+
 - (void)viewDidLoad
 {
+    self.title= @"About Me";
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }

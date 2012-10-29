@@ -135,7 +135,7 @@
     NSString *selectedWebsites = [stringWebsites objectAtIndex:[indexPath row]];
     
     //this is the output for the detail view
-    NSString *displayClient = [[NSString alloc] initWithFormat: @"%@ \nLocation: %@ \nWebsite: %@", selectedClient, selectedLocation, selectedWebsites];
+    NSString *displayClient = [[NSString alloc] initWithFormat: @"Client: \n%@ \n\nLocation: \n%@ \n\nWebsite: \n%@", selectedClient, selectedLocation, selectedWebsites];
     
     // Setup detail view
     DetailViewController *myDetailView = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:[NSBundle mainBundle]];

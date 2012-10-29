@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		849BAA2E163E166000F51123 /* ContactView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849BAA2D163E166000F51123 /* ContactView.xib */; };
+		849BAA32163E167000F51123 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849BAA31163E167000F51123 /* ContactViewController.m */; };
+		84A10DF4163E0C4C008CFE61 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A10DF3163E0C4C008CFE61 /* Default-568h@2x.png */; };
+		84A10DF7163E0F06008CFE61 /* MoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A10DF6163E0F06008CFE61 /* MoreView.xib */; };
+		84A10DFA163E0F24008CFE61 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A10DF9163E0F24008CFE61 /* MoreViewController.m */; };
+		84A10DFC163E10E1008CFE61 /* Screen Shot 2012-08-31 at 6.29.23 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A10DFB163E10E1008CFE61 /* Screen Shot 2012-08-31 at 6.29.23 PM.png */; };
+		84A10DFE163E14BB008CFE61 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A10DFD163E14BB008CFE61 /* Icon@2x.png */; };
 		84B9B44D163DD7AC0066A69E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B9B44C163DD7AC0066A69E /* UIKit.framework */; };
 		84B9B44F163DD7AC0066A69E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B9B44E163DD7AC0066A69E /* Foundation.framework */; };
 		84B9B451163DD7AC0066A69E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B9B450163DD7AC0066A69E /* CoreGraphics.framework */; };
@@ -33,6 +40,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		849BAA2D163E166000F51123 /* ContactView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactView.xib; sourceTree = "<group>"; };
+		849BAA30163E167000F51123 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		849BAA31163E167000F51123 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		84A10DF3163E0C4C008CFE61 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../../../../MDF1/Graphics/Default-568h@2x.png"; sourceTree = "<group>"; };
+		84A10DF6163E0F06008CFE61 /* MoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreView.xib; sourceTree = "<group>"; };
+		84A10DF8163E0F24008CFE61 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		84A10DF9163E0F24008CFE61 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		84A10DFB163E10E1008CFE61 /* Screen Shot 2012-08-31 at 6.29.23 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2012-08-31 at 6.29.23 PM.png"; path = "../../../../../../../Desktop/Screen Shot 2012-08-31 at 6.29.23 PM.png"; sourceTree = "<group>"; };
+		84A10DFD163E14BB008CFE61 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		84B9B448163DD7AC0066A69E /* testApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B9B44C163DD7AC0066A69E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		84B9B44E163DD7AC0066A69E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -110,6 +126,9 @@
 		84B9B452163DD7AC0066A69E /* testApp */ = {
 			isa = PBXGroup;
 			children = (
+				84A10DFD163E14BB008CFE61 /* Icon@2x.png */,
+				84A10DFB163E10E1008CFE61 /* Screen Shot 2012-08-31 at 6.29.23 PM.png */,
+				84A10DF3163E0C4C008CFE61 /* Default-568h@2x.png */,
 				84B9B498163DDFA30066A69E /* Icon.png */,
 				84B9B487163DDC1D0066A69E /* bg.png */,
 				84B9B45B163DD7AC0066A69E /* AppDelegate.h */,
@@ -131,6 +150,12 @@
 				84B9B484163DDA700066A69E /* DetailViewController.h */,
 				84B9B485163DDA700066A69E /* DetailViewController.m */,
 				84B9B482163DDA630066A69E /* DetailViewController.xib */,
+				84A10DF6163E0F06008CFE61 /* MoreView.xib */,
+				84A10DF8163E0F24008CFE61 /* MoreViewController.h */,
+				84A10DF9163E0F24008CFE61 /* MoreViewController.m */,
+				849BAA2D163E166000F51123 /* ContactView.xib */,
+				849BAA30163E167000F51123 /* ContactViewController.h */,
+				849BAA31163E167000F51123 /* ContactViewController.m */,
 			);
 			path = testApp;
 			sourceTree = "<group>";
@@ -214,6 +239,11 @@
 				84B9B483163DDA630066A69E /* DetailViewController.xib in Resources */,
 				84B9B488163DDC1D0066A69E /* bg.png in Resources */,
 				84B9B499163DDFA30066A69E /* Icon.png in Resources */,
+				84A10DF4163E0C4C008CFE61 /* Default-568h@2x.png in Resources */,
+				84A10DF7163E0F06008CFE61 /* MoreView.xib in Resources */,
+				84A10DFC163E10E1008CFE61 /* Screen Shot 2012-08-31 at 6.29.23 PM.png in Resources */,
+				84A10DFE163E14BB008CFE61 /* Icon@2x.png in Resources */,
+				849BAA2E163E166000F51123 /* ContactView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +260,8 @@
 				84B9B46D163DD7AC0066A69E /* SecondViewController.m in Sources */,
 				84B9B481163DD8210066A69E /* ThirdViewController.m in Sources */,
 				84B9B486163DDA710066A69E /* DetailViewController.m in Sources */,
+				84A10DFA163E0F24008CFE61 /* MoreViewController.m in Sources */,
+				849BAA32163E167000F51123 /* ContactViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +383,7 @@
 				84B9B47C163DD7AC0066A69E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  MoreViewController.h
 //  testApp
 //
 //  Created by Lucy Hutcheson on 10/28/12.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface MoreViewController : UIViewController
 
--(IBAction)onMore:(id)sender;
-
+-(IBAction)onClick:(id)sender;
 @end

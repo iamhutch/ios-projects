@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "SecondViewController.h"
 
 @interface DetailViewController ()
 
@@ -14,8 +15,7 @@
 
 @implementation DetailViewController
 
-@synthesize clientDisplay;
-@synthesize clientSelected;
+@synthesize clientDisplay, clientSelected;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,6 +43,7 @@
 
 - (void)viewDidLoad
 {
+    [clientDisplay setText:[self clientSelected]];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
