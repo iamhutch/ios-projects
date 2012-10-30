@@ -11,6 +11,10 @@
 @interface ThirdViewController : UIViewController
 {
     IBOutlet UITextView *textView;
+    IBOutlet UISegmentedControl *segmentControl;
 }
+
+-(IBAction)onChange:(id)sender;
+
 
 @end

@@ -30,6 +30,7 @@
 							
 - (void)viewDidLoad
 {
+    // Setup data arrays for tableview
     stringNames = [[NSMutableArray alloc] initWithObjects:
                    @"Sleep School Hawaii",
                    @"Salon Elements",
@@ -111,20 +112,31 @@
 }
 
 
+
+/*------------------------------------------------------------------------------------------ *
+    One tab must use a UITableViewController and contain selectable data. 
+ *------------------------------------------------------------------------------------------ */
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     
-        
+    // setup table cells
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     cell.textLabel.text = (NSString*)[stringNames objectAtIndex:indexPath.row];
 
     return cell;
 }
+
+
+
+/*------------------------------------------------------------------------------------------ *
+    This selectable data MUST then present a detail UIView displaying most information about this item.
+ *------------------------------------------------------------------------------------------ */
 
 - (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -147,7 +159,6 @@
     // Pull up my detail view
     [self presentViewController:myDetailView animated:YES completion:nil];
     
-    //NSLog(@"row = %d", indexPath.row);
 }
 
 

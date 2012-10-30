@@ -24,6 +24,7 @@
     return self;
 }
 
+// Load another view onto navigationController stack
 - (IBAction)onClick:(id)sender
 {
     ContactViewController *contactView = [[ContactViewController alloc] initWithNibName:@"ContactView" bundle:nil];
@@ -35,6 +36,7 @@
 
 - (void)viewDidLoad
 {
+    // Set default title
     self.title= @"About Me";
     [super viewDidLoad];
 	// Do any additional setup after loading the view.

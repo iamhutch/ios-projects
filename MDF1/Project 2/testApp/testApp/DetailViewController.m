@@ -26,6 +26,7 @@
     return self;
 }
 
+// Display data from selected client from SecondView
 - (id)initWithTextSelected:(NSString *)text
 {
     self.clientSelected = text;

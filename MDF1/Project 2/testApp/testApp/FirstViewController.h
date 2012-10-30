@@ -10,6 +10,7 @@
 
 @interface FirstViewController : UIViewController
 
+// Button to load another view
 -(IBAction)onMore:(id)sender;
 
 @end

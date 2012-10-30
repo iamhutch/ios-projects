@@ -25,6 +25,11 @@
     return self;
 }
 
+/*------------------------------------------------------------------------------------------ *
+    The child of navigation controller can contain any UI you wish but must have an 
+    option to push another view onto the navigationController stack.
+ *------------------------------------------------------------------------------------------ */
+
 -(IBAction)onMore:(id)sender
 {
     MoreViewController *moreView = [[MoreViewController alloc] initWithNibName:@"MoreView" bundle:nil];
@@ -36,6 +41,7 @@
 							
 - (void)viewDidLoad
 {
+    // Add background image and set tint color
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]]];
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
 

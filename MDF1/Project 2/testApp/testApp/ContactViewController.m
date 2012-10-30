@@ -23,6 +23,7 @@
     return self;
 }
 
+// Go back to root view controller from child
 -(IBAction)onClick:(id)sender
 {
     [self.navigationController popToRootViewControllerAnimated:true];
