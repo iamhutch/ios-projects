@@ -14,7 +14,6 @@
 		84A10DF4163E0C4C008CFE61 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A10DF3163E0C4C008CFE61 /* Default-568h@2x.png */; };
 		84A10DF7163E0F06008CFE61 /* MoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A10DF6163E0F06008CFE61 /* MoreView.xib */; };
 		84A10DFA163E0F24008CFE61 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A10DF9163E0F24008CFE61 /* MoreViewController.m */; };
-		84A10DFC163E10E1008CFE61 /* Screen Shot 2012-08-31 at 6.29.23 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A10DFB163E10E1008CFE61 /* Screen Shot 2012-08-31 at 6.29.23 PM.png */; };
 		84A10DFE163E14BB008CFE61 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A10DFD163E14BB008CFE61 /* Icon@2x.png */; };
 		84B9B44D163DD7AC0066A69E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B9B44C163DD7AC0066A69E /* UIKit.framework */; };
 		84B9B44F163DD7AC0066A69E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B9B44E163DD7AC0066A69E /* Foundation.framework */; };
@@ -51,7 +50,6 @@
 		84A10DF6163E0F06008CFE61 /* MoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreView.xib; sourceTree = "<group>"; };
 		84A10DF8163E0F24008CFE61 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		84A10DF9163E0F24008CFE61 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
-		84A10DFB163E10E1008CFE61 /* Screen Shot 2012-08-31 at 6.29.23 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2012-08-31 at 6.29.23 PM.png"; path = "../../../../../../../Desktop/Screen Shot 2012-08-31 at 6.29.23 PM.png"; sourceTree = "<group>"; };
 		84A10DFD163E14BB008CFE61 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		84B9B448163DD7AC0066A69E /* testApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B9B44C163DD7AC0066A69E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -133,7 +131,6 @@
 				849BAA3B163E289800F51123 /* third.png */,
 				849BAA3C163E289800F51123 /* third@2x.png */,
 				84A10DFD163E14BB008CFE61 /* Icon@2x.png */,
-				84A10DFB163E10E1008CFE61 /* Screen Shot 2012-08-31 at 6.29.23 PM.png */,
 				84A10DF3163E0C4C008CFE61 /* Default-568h@2x.png */,
 				84B9B498163DDFA30066A69E /* Icon.png */,
 				84B9B487163DDC1D0066A69E /* bg.png */,
@@ -247,7 +244,6 @@
 				84B9B499163DDFA30066A69E /* Icon.png in Resources */,
 				84A10DF4163E0C4C008CFE61 /* Default-568h@2x.png in Resources */,
 				84A10DF7163E0F06008CFE61 /* MoreView.xib in Resources */,
-				84A10DFC163E10E1008CFE61 /* Screen Shot 2012-08-31 at 6.29.23 PM.png in Resources */,
 				84A10DFE163E14BB008CFE61 /* Icon@2x.png in Resources */,
 				849BAA2E163E166000F51123 /* ContactView.xib in Resources */,
 				849BAA3D163E289800F51123 /* third.png in Resources */,

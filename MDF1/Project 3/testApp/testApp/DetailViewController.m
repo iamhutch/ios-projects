@@ -17,8 +17,7 @@
 @implementation DetailViewController
 
 
-@synthesize clientDisplay;
-@synthesize clientSelected;
+@synthesize clientDisplay, selectedLocationText, selectedLocation, selectedLatitude, selectedLongitude;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -32,8 +31,8 @@
 
 - (id)initWithTextSelected:(NSString *)text
 {
-    self.clientSelected = text;
-    [clientDisplay setText:[self clientSelected]];
+    self.selectedLocationText = text;
+    [clientDisplay setText:[self selectedLocationText]];
     return self;
 }
 
@@ -47,41 +46,42 @@
 
 - (void)viewDidLoad
 {
-    [clientDisplay setText:[self clientSelected]];
+    
+    [clientDisplay setText:[self selectedLocationText]];
+    
+    NSString *myLatitude = selectedLatitude;
+    float latitudeFloat = [myLatitude floatValue];
+
+    NSString *myLongitude = selectedLongitude;
+    float longitudeFloat = [myLongitude floatValue];
 
     
     MKCoordinateSpan span;
-    span.latitudeDelta = 50.0f;
-    span.longitudeDelta = 50.0f;
+    span.latitudeDelta = 0.5f;
+    span.longitudeDelta = 0.5f;
     
     CLLocationCoordinate2D location;
-    location.latitude = 28.55f;
-    location.longitude = -81.33f;
+    location.latitude = latitudeFloat;
+    location.longitude = longitudeFloat;
     
     MKCoordinateRegion region;
     region.center = location;
     region.span = span;
     mapView.region = region;
     
-    CLLocationCoordinate2D orlandoLocation;
-    orlandoLocation.latitude = 28.55f;
-    orlandoLocation.longitude = -81.33f;
+    CLLocationCoordinate2D coordinate;
+    coordinate.latitude = latitudeFloat;
+    coordinate.longitude = longitudeFloat;
     
-    CLLocationCoordinate2D boiseLocation;
-    boiseLocation.latitude = 43.56444f;
-    boiseLocation.longitude = -116.22277f;
-    
-    CLLocationCoordinate2D tokyoLocation;
-    tokyoLocation.latitude = 35.6833f;
-    tokyoLocation.longitude = 139.7667f;
 
-    MyMapAnnotation *annotation =[[MyMapAnnotation alloc] initWithTitle:@"Orlando" coord:orlandoLocation];
+    NSString *displayName = [[NSString alloc] initWithFormat: @"Just a Hutch Designs, %@", selectedLocation];
+
     
-    MyMapAnnotation *annotation2 =[[MyMapAnnotation alloc] initWithTitle:@"Boise" coord:boiseLocation];
+    MyMapAnnotation *annotation =[[MyMapAnnotation alloc] initWithTitle:displayName coord:coordinate];
     
-    MyMapAnnotation *annotation3 =[[MyMapAnnotation alloc] initWithTitle:@"Boise" coord:tokyoLocation];
     
-    MyMapAnnotations = [[NSArray alloc] initWithObjects:annotation, annotation2, annotation3, nil];
+    
+    MyMapAnnotations = [[NSArray alloc] initWithObjects:annotation, nil];
     
     if (MyMapAnnotations != nil)
     {

@@ -9,7 +9,6 @@
 #import "FirstViewController.h"
 #import "DetailViewController.h"
 
-
 @interface FirstViewController ()
 
 @end
@@ -47,29 +46,31 @@
     
     stringLatitude = [[NSMutableArray alloc] initWithObjects:
                       @"21.388352",
-                      @"www.salon-elements.com",
-                      @"www.guamsleepcenter.com",
-                      @"www.sleepcenterhawaii.com",
-                      @"www.theraphamassage.com",
-                      @"www.ctrcconnect.org",
-                      @"www.jesesmobileac.com",
-                      @"www.motivatraining.com",
-                      @"www.connectingpenpals.com",
-                      @"www.rcsstexas.com",
+                      @"31.075469",
+                      @"13.510645",
+                      @"21.388352",
+                      @"31.127764",
+                      @"31.064846",
+                      @"31.083510",
+                      @"13.476263",
+                      @"30.267153",
+                      @"31.082399",
                       nil];
     
     stringLongitude = [[NSMutableArray alloc] initWithObjects:
                       @"-157.953836",
-                      @"www.salon-elements.com",
-                      @"www.guamsleepcenter.com",
-                      @"www.sleepcenterhawaii.com",
-                      @"www.theraphamassage.com",
-                      @"www.ctrcconnect.org",
-                      @"www.jesesmobileac.com",
-                      @"www.motivatraining.com",
-                      @"www.connectingpenpals.com",
-                      @"www.rcsstexas.com",
+                      @"-97.653306",
+                      @"144.813237",
+                      @"-157.953836",
+                      @"-97.734482",
+                      @"-98.152801",
+                      @"-97.659738",
+                      @"144.799584",
+                      @"-97.743061",
+                      @"-97.654709",
                       nil];
+    
+
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -118,20 +119,24 @@
 - (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    // Pull the related information for the selected client
+    // Pull the related information for the selected location
     NSString *selectedLocation = [stringLocation objectAtIndex:[indexPath row]];
     NSString *selectedLatitude = [stringLatitude objectAtIndex:[indexPath row]];
     NSString *selectedLongitude = [stringLongitude objectAtIndex:[indexPath row]];
     
     //this is the output for the detail view
-    NSString *displayClient = [[NSString alloc] initWithFormat: @"Just a Hutch Designs \nLocation: %@ \nLatitude: %@ \nLongitude: %@", selectedLocation, selectedLatitude, selectedLongitude];
+    NSString *displayInfo = [[NSString alloc] initWithFormat: @"Just a Hutch Designs \nLocation: %@ \nLatitude: %@ \nLongitude: %@", selectedLocation, selectedLatitude, selectedLongitude];
     
     // Setup detail view
     DetailViewController *myDetailView = [[DetailViewController alloc] initWithNibName:@"DetailView" bundle:[NSBundle mainBundle]];
     self.detailView = myDetailView;
     
-    // Setup client information for display
-    detailView.clientSelected = displayClient;
+    // Setup location information for display
+    detailView.selectedLocationText = displayInfo;
+    detailView.selectedLocation = selectedLocation;
+    detailView.selectedLatitude = selectedLatitude;
+    detailView.selectedLongitude = selectedLongitude;
+    
     
     // Pull up my detail view
     [self presentViewController:myDetailView animated:YES completion:nil];

@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import "DetailViewController.h"
 
 @interface SecondViewController : UIViewController
+{
+    IBOutlet MKMapView *fullMapView;
+    NSMutableArray *stringLocation;
+    NSMutableArray *stringLatitude;
+    NSMutableArray *stringLongitude;
+}
+
+
 
 @end
